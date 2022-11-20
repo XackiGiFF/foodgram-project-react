@@ -97,7 +97,7 @@ Load ingredients ( data/ingredients.csv ):
 sudo docker-compose exec foodgram_backend_1 python manage.py load_ingrs
 ```
 
-Load ingredients ( data/tags.csv ):
+Load tags ( data/tags.csv ):
 ```bash
 sudo docker-compose exec foodgram_backend_1 python manage.py load_tags
 ```
