@@ -84,32 +84,32 @@ Your service is work!
 
 For first deploy create static on server
 ```bash
-docker exec -it foodgram-backend-1 python manage.py collectstatic --noinput
+docker exec -it foodgram_backend_1 python manage.py collectstatic --noinput
 ```
 
 Migrations:
 ```bash
-docker exec -it foodgram-backend-1 python manage.py migrate --noinput
+docker exec -it foodgram_backend_1 python manage.py migrate --noinput
 ```
 
 Makemigrations:
 ```bash
-docker exec -it foodgram-backend-1 python manage.py manage.py makemigrations --noinput
+docker exec -it foodgram_backend_1 python manage.py makemigrations --noinput
 ```
 
 Load ingredients ( data/ingredients.csv ):
 ```bash
-docker exec -it foodgram-backend-1 python manage.py load_ingrs
+docker exec -it foodgram_backend_1 python manage.py load_ingrs
 ```
 
 Load tags ( data/tags.csv ):
 ```bash
-docker exec -it foodgram-backend-1 python manage.py load_tags
+docker exec -it foodgram_backend_1 python manage.py load_tags
 ```
 
 For make superuser Django - 
 ```bash
-docker exec -it foodgram-backend-1 python manage.py createsuperuser
+docker exec -it foodgram_backend_1 python manage.py createsuperuser
 ```
 
 ### *Backend by:*
