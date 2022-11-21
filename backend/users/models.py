@@ -73,7 +73,7 @@ class User(AbstractUser):
         help_text=conf.USERS_HELP_FNAME
     )
     password = CharField(
-        verbose_name=_('Пароль'),
+        verbose_name='Пароль',
         max_length=150,
         help_text=conf.USERS_HELP_FNAME
     )
