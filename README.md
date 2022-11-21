@@ -114,3 +114,4 @@ docker exec -it foodgram_backend_1 python manage.py createsuperuser
 
 ### *Backend by:*
 [Xewus](https://github.com/Xewus)
+
