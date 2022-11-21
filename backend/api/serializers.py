@@ -56,9 +56,10 @@ class UserSerializer(ModelSerializer):
             bool: True, если подписка есть. Во всех остальных случаях False.
         """
         user = self.context.get('request').user
-        if user.is_anonymous or (user == obj):
-            return False
-        return user.subscribe.filter(id=obj.id).exists()
+        return (
+            user.is_authenticated
+            and user.subscribe.filter(id=obj.id).exists()
+        )
 
     def create(self, validated_data):
         """ Создаёт нового пользователя с запрошенными полями.
@@ -233,8 +234,10 @@ class RecipeSerializer(ModelSerializer):
         """
         user = self.context.get('request').user
 
-        if not user.is_anonymous:
-            return user.favorites.filter(id=obj.id).exists()
+        return (
+            user.is_authenticated
+            and user.favorites.filter(id=obj.id).exists()
+        )
 
     def get_is_in_shopping_cart(self, obj):
         """Проверка - находится ли рецепт в списке  покупок.
@@ -247,8 +250,7 @@ class RecipeSerializer(ModelSerializer):
             у запращивающего пользователя, иначе - False.
         """
         user = self.context.get('request').user
-        if not user.is_anonymous:
-            return user.carts.filter(id=obj.id).exists()
+        return user.is_authenticated and user.carts.filter(id=obj.id).exists()
 
     def validate(self, data):
         """Проверка вводных данных при создании/редактировании рецепта.
