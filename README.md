@@ -18,7 +18,7 @@
 - Postgres
 
 
-## http://foodgram.gq
+## http://213.189.221.245
 
 
 Here you can share recipes of dishes, add them to favorites and display a shopping list for cooking your favorite dishes.
