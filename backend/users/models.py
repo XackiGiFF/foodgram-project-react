@@ -72,11 +72,6 @@ class User(AbstractUser):
         max_length=conf.MAX_LEN_USERS_CHARFIELD,
         help_text=conf.USERS_HELP_FNAME
     )
-    password = CharField(
-        verbose_name='Пароль',
-        max_length=150,
-        help_text=conf.USERS_HELP_FNAME
-    )
     subscribe = ManyToManyField(
         verbose_name='Подписка',
         related_name='subscribers',
