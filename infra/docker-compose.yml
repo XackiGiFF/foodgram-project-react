@@ -5,7 +5,7 @@ services:
 # 123123
 
   frontend:
-    image: cheepok/foodgram_frontend:latest
+    image: xackigiff/foodgram_frontend:latest
     volumes:
       - ./frontend/:/app/result_build/
 
@@ -18,7 +18,7 @@ services:
       - ./.env
 
   backend:
-    image: cheepok/foodgram_backend:latest
+    image: xackigiff/foodgram_backend:latest
     restart: always
     command: >
       bash -c "python manage.py migrate &&
