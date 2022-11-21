@@ -84,12 +84,17 @@ Your service is work!
 
 For first deploy create static on server
 ```bash
-docker exec -it foodgram-backend-1 python manage.py  collectstatic --noinput
+docker exec -it foodgram-backend-1 python manage.py collectstatic --noinput
 ```
 
 Migrations:
 ```bash
-docker exec -it foodgram-backend-1 python manage.py  migrate --noinput
+docker exec -it foodgram-backend-1 python manage.py migrate --noinput
+```
+
+Makemigrations:
+```bash
+docker exec -it foodgram-backend-1 python manage.py manage.py makemigrations --noinput
 ```
 
 Load ingredients ( data/ingredients.csv ):
